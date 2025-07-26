@@ -1,0 +1,158 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.container {
+  background-color: white;
+  width: 360px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  position: relative;
+}
+
+.logo {
+  width: 100px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.login-section .tab {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.login-section .tab .active {
+  color: red;
+  font-weight: bold;
+}
+
+.login-section input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#password {
+  padding-right: 40px;
+}
+
+.login-section button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+}
+
+.login-section button:hover {
+  background-color: #0056b3;
+}
+
+.terms {
+  font-size: 10px;
+  color: gray;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.change-number {
+  font-size: 12px;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0077cc;
+}
+
+.register-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.option {
+  flex: 1;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+.option img {
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  margin-bottom: 12px;
+  padding-left: 20px;
+}
+
+.logo-wrapper img {
+  height: 40px;
+}
+
+.paypay-text {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
+}
+
+.help-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 26px;
+  height: 26px;
+  background-color: transparent;
+  color: #333;
+  font-weight: normal;
+  border: 1px solid #999;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.input-error {
+  border: 2px solid red;
+  animation: shake 0.2s ease-in-out 2;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url('./icons/eye-icon.svg') no-repeat center center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}

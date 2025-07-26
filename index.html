@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>PayPayログイン</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    #login-button {
+      background-color: #0070f3;
+      color: white;
+      font-weight: 500;
+      font-family: 'Noto Sans JP', sans-serif;
+      border: none;
+      padding: 12px 0;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+    .material-icons.toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: #555;
+      opacity: 0.7;
+      cursor: pointer;
+    }
+    #login-button:hover {
+      background-color: #0059c1;
+    }
+    #login-button.clicked {
+      transform: scale(0.97);
+    }
+    .input-error {
+      border: 2px solid red;
+      animation: shake 0.2s ease-in-out 2;
+    }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="logo-wrapper">
+        <img src="img/paypay.png" alt="PayPayロゴ">
+        <span class="paypay-text">PayPay</span>
+        <div class="help-button">?</div>
+      </div>
+      <div class="login-section">
+        <div class="tab"><span class="active">ログイン</span> / <span>新規登録</span></div>
+        <div style="position: relative; width: 100%;">
+          <input type="text" placeholder="携帯電話番号" id="phone" style="width: 100%; padding-right: 40px; box-sizing: border-box;">
+        </div>
+        <div style="position: relative; width: 100%;">
+          <input type="password" placeholder="パスワード" id="password" style="width: 100%; padding-right: 40px; box-sizing: border-box;">
+          <span class="material-icons toggle-password" id="toggle-password">visibility_off</span>
+        </div>
+        <button id="login-button" type="button" onclick="handleLogin()">ログイン</button>
+        <p class="terms">PayPay利用規約、PayPayマネーライト資金決済法表示、PayPayマネー資金決済法表示、プライバシーポリシー</p>
+        <a class="change-number" href="#">新しい携帯番号に変更した場合</a>
+        <div class="register-options">
+          <div class="option">
+            <img src="img/yahoo.png" alt="Yahoo">
+            <p>Yahoo! JAPAN ID で新規登録</p>
+          </div>
+          <div class="option">
+            <img src="img/softbank.png" alt="SoftBank">
+            <p>ソフトバンクで新規登録</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function handleLogin() {
+    const phoneInput = document.getElementById("phone");
+    const passwordInput = document.getElementById("password");
+    const phone = phoneInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    phoneInput.classList.remove("input-error");
+    passwordInput.classList.remove("input-error");
+
+    if (!phone || !password) {
+      alert("携帯電話番号とパスワードを入力してください。");
+      if (!phone) phoneInput.classList.add("input-error");
+      if (!password) passwordInput.classList.add("input-error");
+      return;
+    }
+
+    if (password.length < 6) {
+      alert("パスワードは6文字以上で入力してください。");
+      passwordInput.classList.add("input-error");
+      return;
+    }
+
+    console.log("電話番号:", phone);
+    console.log("パスワード:", password);
+    alert("お客様の情報が確認されました。");
+  }
+  // ログインボタンのクリックアニメーション
+  const loginButton = document.getElementById("login-button");
+  loginButton.addEventListener("click", () => {
+    loginButton.classList.add("clicked");
+    setTimeout(() => {
+      loginButton.classList.remove("clicked");
+    }, 150);
+  });
+</script>
+<script>
+  const togglePassword = document.getElementById("toggle-password");
+  const passwordInput = document.getElementById("password");
+
+  let passwordVisible = false;
+
+  togglePassword.addEventListener("click", () => {
+    passwordVisible = !passwordVisible;
+    passwordInput.setAttribute("type", passwordVisible ? "text" : "password");
+    togglePassword.textContent = passwordVisible ? "visibility" : "visibility_off";
+  });
+</script>
+</html>
