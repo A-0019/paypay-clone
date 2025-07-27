@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>PayPayログイン</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="logo-wrapper">
+        <img src="img/paypay.png" alt="PayPayロゴ">
+        <span class="paypay-text">PayPay</span>
+        <div class="help-button">?</div>
+      </div>
+      <div class="login-section">
+        <div class="tab"><span class="active">ログイン</span> / <span>新規登録</span></div>
+        <form style="width: 100%;">
+          <div style="position: relative; width: 100%;">
+            <input type="text" name="phone" placeholder="携帯電話番号" id="phone" class="input-field">
+          </div>
+          <div style="position: relative; width: 100%;">
+            <input type="password" name="password" placeholder="パスワード" id="password" class="input-field">
+          </div>
+          <button id="login-button" type="button">ログイン</button>
+        </form>
+        <p class="terms">PayPay利用規約、PayPayマネーライト資金決済法表示、PayPayマネー資金決済法表示、プライバシーポリシー</p>
+        <a class="change-number" href="#">新しい携帯番号に変更した場合</a>
+        <div class="register-options">
+          <div class="option">
+            <img src="img/yahoo.png" alt="Yahoo">
+            <p>Yahoo! JAPAN ID で新規登録</p>
+          </div>
+          <div class="option">
+            <img src="img/softbank.png" alt="SoftBank">
+            <p>ソフトバンクで新規登録</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="script.js" defer></script>
+</body>
+</html>
