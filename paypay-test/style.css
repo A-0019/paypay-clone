@@ -148,3 +148,48 @@ body {
   75% { transform: translateX(-5px); }
   100% { transform: translateX(0); }
 }
+
+/* スマホ対応のレスポンシブ */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;      /* 画面幅の90%に縮小 */
+    padding: 20px;   /* パディング少し小さく */
+  }
+
+  .logo-wrapper {
+    justify-content: center; /* ロゴ中央寄せ */
+    gap: 4px;
+    padding-left: 0;
+  }
+
+  .logo-wrapper img {
+    height: 30px;    /* ロゴ小さく */
+  }
+
+  .paypay-text {
+    font-size: 18px; /* 文字サイズ縮小 */
+  }
+
+  .login-section input,
+  .login-section button {
+    font-size: 14px; /* 入力欄とボタンの文字サイズ小さく */
+    padding: 10px;
+  }
+
+  .register-options {
+    flex-direction: column;  /* 新規登録ボタンを縦並びに */
+  }
+
+  .option {
+    margin-bottom: 10px;     /* 下の余白 */
+  }
+
+  .help-button {
+    top: 10px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
